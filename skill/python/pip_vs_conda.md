@@ -2,7 +2,7 @@
 
 ## pip和conda的关系
 
-![python包管理工具：Conda和pip比较](http://p1.pstatp.com/large/pgc-image/894f80b6f487462684ee075e4e732db4)
+![python包管理工具：Conda和pip比较](img/pip_conda_imag1.jpeg)
 
 
 
@@ -18,7 +18,7 @@ Pip和conda在如何实现环境中的依赖关系方面也有所不同。安装
 
 考虑到conda和pip之间的相似性，有些人试图将这些工具结合起来创建数据科学环境也就不足为奇了。将pip与conda结合的主要原因是有些包只能通过pip安装。 Anaconda创酷提供超过1,500个软件包，包括最流行的数据科学，机器学习和AI框架。这些，以及包括conda-forge和bioconda在内的数据通过Anaconda云提供的数千个附加软件包，可以使用conda进行安装。尽管有大量的软件包，但与PyPI上提供的150,000多个软件包相比，它仍然很小。有时候需要的包没有conda包，但在PyPI上有，可以用pip安装。
 
-![pythonåç®¡çå·¥å·ï¼Condaåpipæ¯è¾](http://p3.pstatp.com/large/pgc-image/7f0755830c09480a87108ee049824ed5)
+![python_pip_vs_conda](img/pip_conda_image2.jpeg)
 
 
 
