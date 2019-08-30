@@ -22,6 +22,12 @@ Pip和conda在如何实现环境中的依赖关系方面也有所不同。安装
 
 
 
+### pip与conda的包路径
+
+1. conda install的package似乎是在anaconda\pkgs下，而pip install的package是在anaconda\Lib\site-packages下。推荐使用pip管理包（pip是python官方推荐的包管理器）
+
+2. 如果你在base环境，pip install的package应该就是安装在anaconda\Lib\site-packages下，然后其他虚拟环境下的使用python packages时优先搜索该虚拟环境下的package，如果没有它就搜索base环境下的package，也就是base环境下的package是可以被其他虚拟环境使用的，如果你进入其他虚拟环境下使用pip install，那么下载的包就只在这个虚拟环境中
+
 
 
 ## pip
@@ -58,11 +64,109 @@ pip freeze --local | grep -v '^-e' | cut -d = -f 1  | xargs -n1 pip install -U
 
 ## conda
 
-conda
+获取版本号
+
+```
+conda --version
+```
+
+
+
+获取帮助
+
+```
+conda --help
+conda -h
+```
+
+
+
+### conda env
+
+查看虚拟环境
+
+```
+conda env list
+conda info -e
+```
+
+
+
+创建环境
+
+```
+conda create --name env_name
+source activate env_name
+```
+
+
+
+创建不同版本的python环境
+
+```
+conda create --name python27 python=2.7
+conda create --name python34 python=3.4
+```
+
+
+
+
+
+### conda package管理
+
+安装anaconda发行版中所有的包
+
+```
+conda install anaconda
+```
+
+
+
+在某环境中安装包
+
+```
+conda install -n env_name package_spec 
+activate env_name && conda install package_spec
+```
+
+
+
+查看已经安装package情况
+
+```
+conda list	
+conda list -n env_name
+```
+
+
+
+更新package
+
+```
+conda update package_spec
+conda update anaconda
+```
+
+ 查找包
+
+```
+conda search package_spec
+```
+
+ 卸载包
+
+```
+conda remove package_spec
+```
+
+
+
+
 
 
 
 参考链接：
 
 1. https://www.toutiao.com/i6632773927758201347/
-2. 
+2. https://blog.csdn.net/fyuanfena/article/details/52080270
+3. https://blog.csdn.net/marsjhao/article/details/62884246
